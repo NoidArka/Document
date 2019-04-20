@@ -1,0 +1,26 @@
+<!doctype html>
+	<title>Doc Scanner</title>
+	<body>
+		<h1>Doc Scanner</h1>
+		<hr >
+		<div>
+		{% if filename %}
+			<p>File uploaded: {{ filename }} </p >
+			<p>Original Image:
+			<img src="/uploads/{{filename}}" alt="Uploaded image" width="300"></img>
+			</p>
+			{% if scanned_filename %}
+				<p>
+				Scanned Image:
+				<img src="/scanned/{{scanned_filename}}" alt="Scanned image" width="300"></img>
+				<a href="/scanned/{{scanned_filename}}/True">Download</a>
+				</p>
+			{% endif %}
+		{% else %}
+			No file uploaded!?
+		{% endif %}
+		</div>
+		<hr >
+		<p>Click here to go <a href="/">back</a>
+	</body>
+</html>
